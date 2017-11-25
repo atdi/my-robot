@@ -5,6 +5,7 @@ import app.engine as engine
 
 
 app = Flask(__name__)
+engine.setup()
 
 
 @app.route('/')
