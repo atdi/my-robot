@@ -2,7 +2,7 @@
 
 from flask import Flask
 from app import init
-
+import time
 
 app = Flask(__name__)
 
@@ -13,5 +13,14 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    init()
-    app.run(host= '0.0.0.0')
+    pwm_smp = init()
+    while True:
+        pwm_smp.set(0, 0, 375)
+        time.sleep(1)
+        pwm_smp.set(0, 0, 450)
+        time.sleep(1)
+        pwm_smp.set(0, 0, 525)
+        time.sleep(1)
+        pwm_smp.set(0, 0, 450)
+        time.sleep(1)
+    #app.run(host= '0.0.0.0')
