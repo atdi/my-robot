@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 from flask import Flask
-from app import init
-import time
+import app.engine as engine
+
 
 app = Flask(__name__)
 
@@ -12,15 +12,11 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route('/forward')
+def move_forward():
+    engine.forward()
+    return 'Move forward'
+
+
 if __name__ == '__main__':
-    pwm_smp = init()
-    while True:
-        pwm_smp.set(0, 0, 375)
-        time.sleep(1)
-        pwm_smp.set(0, 0, 450)
-        time.sleep(1)
-        pwm_smp.set(0, 0, 525)
-        time.sleep(1)
-        pwm_smp.set(0, 0, 450)
-        time.sleep(1)
-    #app.run(host= '0.0.0.0')
+    app.run(host= '0.0.0.0')
