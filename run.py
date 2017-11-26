@@ -15,7 +15,7 @@ def hello_world():
 
 @app.route('/forward')
 def move_forward():
-    engine.forward()
+    engine.forwardWithSpeed(50)
     return 'Move forward'
 
 
