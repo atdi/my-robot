@@ -19,5 +19,11 @@ def move_forward():
     return 'Move forward'
 
 
+@app.route('/stop')
+def stop():
+    engine.stop()
+    return 'Stop'
+
+
 if __name__ == '__main__':
     app.run(host= '0.0.0.0')
