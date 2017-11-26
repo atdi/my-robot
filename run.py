@@ -17,13 +17,13 @@ def hello_world():
 
 @app.route('/forward')
 def move_forward():
-    engine.forwardWithSpeed(50)
+    engine.forwardWithSpeed(10)
     return 'Move forward'
 
 
 @app.route('/backward')
 def move_backward():
-    engine.backwardWithSpeed(50)
+    engine.backwardWithSpeed(10)
     return 'Move forward'
 
 
