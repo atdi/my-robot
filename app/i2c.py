@@ -8,6 +8,7 @@ RPI_REVISION_1_MODULE_AP = ["0012"]
 RPI_REVISION_2 = ["a01041", "a21041"]
 RPI_REVISION_3 = ["a02082", "a22082"]
 
+
 class I2C(object):
 
     @staticmethod

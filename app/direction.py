@@ -6,9 +6,9 @@ def Map(x, in_min, in_max, out_min, out_max):
 
 def setup():
     global leftPWM, rightPWM, homePWM, pwm
-    leftPWM = 400
-    homePWM = 450
-    rightPWM = 500
+    leftPWM = 330
+    homePWM = 380
+    rightPWM = 430
     offset =0
     leftPWM += offset
     homePWM += offset
@@ -33,7 +33,6 @@ def turn_right():
 # ==========================================================================================
 # Make the car turn back.
 # ==========================================================================================
-
 def turn(angle):
     angle = Map(angle, 0, 255, leftPWM, rightPWM)
     pwm.set(0, 0, angle)
@@ -43,4 +42,4 @@ def home():
     pwm.set(0, 0, homePWM)
 
 def calibrate(x):
-    pwm.set(0, 0, 450+x)
+    pwm.set(0, 0, 380+x)

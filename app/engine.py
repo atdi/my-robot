@@ -11,8 +11,6 @@ Motor0_B = 12  # pin12
 Motor1_A = 13  # pin13
 Motor1_B = 15  # pin15
 
-FILE_CONFIG = "/home/pi/Sunfounder_Smart_Video_Car_Kit_for_RaspberryPi/server/config"
-
 # ===========================================================================
 # Set channel 4 and 5 of the servo driver IC to generate PWM, thus
 # controlling the speed of the car
@@ -40,14 +38,7 @@ def setup():
     forward1 = 'True'
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)        # Number GPIOs by its physical location
-    try:
-        for line in open(FILE_CONFIG):
-            if line[0:8] == "forward0":
-                forward0 = line[11:-1]
-            if line[0:8] == "forward1":
-                forward1 = line[11:-1]
-    except:
-        pass
+
     if forward0 == 'True':
         backward0 = 'False'
     elif forward0 == 'False':
