@@ -6,24 +6,24 @@ import app.direction as direction
 
 
 app = Flask(__name__)
-engine.setup()
-direction.setup()
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def init_robot():
+    engine.setup()
+    direction.setup()
+    return 'Robot has been initialized!'
 
 
 @app.route('/forward')
 def move_forward():
-    engine.forwardWithSpeed(10)
+    engine.forwardWithSpeed(50)
     return 'Move forward'
 
 
 @app.route('/backward')
 def move_backward():
-    engine.backwardWithSpeed(10)
+    engine.backwardWithSpeed(50)
     return 'Move forward'
 
 
