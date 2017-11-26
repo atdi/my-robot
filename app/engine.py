@@ -31,8 +31,8 @@ p = init_servo()
 def setSpeed(speed):
     speed *= 40
     print('speed is: ', speed)
-    p.setPWM(EN_M0, 0, speed)
-    p.setPWM(EN_M1, 0, speed)
+    p.set(EN_M0, 0, speed)
+    p.set(EN_M1, 0, speed)
 
 def setup():
     global forward0, forward1, backward1, backward0
