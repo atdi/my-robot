@@ -3,6 +3,7 @@
 from flask import Flask
 import app.engine as engine
 import app.direction as direction
+from flask import request
 
 
 app = Flask(__name__)
@@ -42,6 +43,13 @@ def turn_right():
 def stop():
     engine.stop()
     return 'Stop'
+
+
+@app.route('/dir/calibrate')
+def calibrate_dir():
+    x = int(request.args.get("x"))
+    direction.calibrate(x)
+    return 'Calibrate'
 
 
 if __name__ == '__main__':
